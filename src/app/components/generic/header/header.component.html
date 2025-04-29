@@ -1,0 +1,24 @@
+<header class="bg-base-100 shadow-md">
+  <div class="navbar container mx-auto">
+    <div class="navbar-start">
+      
+    </div>
+    <div class="navbar-center">
+      <a routerLink="/" class="text-xl font-bold">MELÓN UNIVERSITY</a>
+    </div>
+    <div class="navbar-end">
+      <div class="dropdown dropdown-end" #drop>
+        <div tabindex="0" role="button" class="btn btn-ghost">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="public" /> {{langInfo().label}}
+        </div>
+        <ul
+          tabindex="0"
+          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+          @for (item of langService.langs_list; track $index) {
+            <li><a lang="{{item.key}}" (click)="pickLang(item.key)">{{item.label}}</a></li>
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

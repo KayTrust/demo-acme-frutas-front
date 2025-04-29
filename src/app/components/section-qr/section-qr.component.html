@@ -1,0 +1,25 @@
+<section class="flex flex-col p-4" [class]="bg_section()">
+  <div class="flex flex-row items-center gap-12 flex-1 container mx-auto">
+    <div class="flex flex-col items-center" [class]="order_qr()">
+      @if (qr_title()) {
+        <h2 class="text-center uppercase text-3xl font-bold">{{qr_title()}}</h2>
+      }
+      <app-qr-img [qr_content]="qr_content()" [bg_class]="bg_qr()" [width]="qr_width()" [pdd_class]="qr_class()" />
+    </div>
+    <div class="order-2 flex-1 flex flex-col justify-center gap-y-5">
+      @if (section_title()) {
+        <h3 class="text-xl font-bold">{{section_title()}}</h3>
+      }
+      @if (description()) {
+        <markdown [data]="description()">
+        </markdown>
+      }
+    </div>
+    @if (logo_url()) {
+      <!-- <div class="p-4 rounded-2xl border border-gray-400 bg-white" [class]="order_logo()">
+        <img alt="logo" class="object-contain" [src]="logo_url()"  [style.width]="logo_size()" [style.height]="logo_size()">
+      </div> -->
+      <app-logo-step [logo_url]="logo_url()!" [logo_size]="logo_size()" [cls_cnt]="order_logo()" [class]="order_logo()" />
+    }
+  </div>
+</section>

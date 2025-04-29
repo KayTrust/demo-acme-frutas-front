@@ -1,0 +1,43 @@
+<div class="flex flex-col h-full">
+  <div class="container mx-auto flex flex-col flex-1 gap-4">
+    <div class="border bg-white border-gray-200 rounded flex flex-row items-center py-4 px-1">
+      <div class="w-1/4">
+        <img src="/images/undraw-folder.png" class="h-[132px] w-full object-contain" />
+      </div>
+      <div class="flex-1">
+        <h2 class="text-lg">
+          Latest applicants who have shared their <strong>University degrees</strong> validated by Melon University.
+        </h2>
+      </div>
+      <div class="w-1/4 flex justify-center">
+        <app-logo-step logo_url="/images/logo-acme-university.png" logo_size="100px" />
+      </div>
+    </div>
+
+    <div class="overflow-x-auto overflow-y-auto max-h-[calc(90dvh)]">
+      <table mat-table [dataSource]="dataSource()" class=""
+        matSort matSortActive="updatedAt" matSortDisableClear matSortDirection="desc"
+      >
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef class="uppercase"> Shared by </th>
+          <td mat-cell *matCellDef="let user"> {{user.name}} </td>
+        </ng-container>
+        <ng-container matColumnDef="entity">
+          <th mat-header-cell *matHeaderCellDef class="uppercase"> RECEIVED BY </th>
+          <td mat-cell *matCellDef="let user"> Enterprise </td>
+        </ng-container>
+        <ng-container matColumnDef="updatedAt">
+          <th mat-header-cell *matHeaderCellDef class="uppercase"> RECENT ACTIVITY </th>
+          <td mat-cell *matCellDef="let user"> {{user.updatedAt | date:'medium'}} </td>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef class="uppercase"></th>
+          <td mat-cell *matCellDef="let user"></td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columns()"></tr>
+        <tr mat-row *matRowDef="let myRowData; columns: columns()"></tr>
+      </table>
+    </div>
+  </div>
+</div>

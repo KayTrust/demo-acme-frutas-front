@@ -1,0 +1,7 @@
+<div class="inline-block rounded-full" [class]="cnt_clas()" [attr.data-uri]="qr_content()">
+  @if (src()) {
+    <img [src]="src()" alt="QR Code" />
+  } @else {
+    <div class="bg-white" [style.width]="size_px()" [style.height]="size_px()"></div>
+  }
+</div>
