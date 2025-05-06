@@ -1,5 +1,5 @@
 export const environment = {
   api_host: 'https://frutas-bxa2d2ehd9grh2a6.eastus2-01.azurewebsites.net',
   redirect_origin: 'https://frutas-bxa2d2ehd9grh2a6.eastus2-01.azurewebsites.net',
-  openid_url: 'openid://?state=e0520dc4-b57a-47c5-8ebf-ed95175561c8&redirect_uri=<current_uri>%2Foauth2%2Fcb%2FvpToken&response_mode=query&response_type=vp_token&client_id=<current_uri>%2Foauth&scope=openid'
+  openid_url: 'openid://?state=e0520dc4-b57a-47c5-8ebf-ed95175561c8&redirect_uri=<current_uri>%2Fverifier%2Foauth2%2Fcb%2FvpToken&response_mode=query&response_type=vp_token&client_id=<current_uri>%2Foauth&scope=openid'
 };
