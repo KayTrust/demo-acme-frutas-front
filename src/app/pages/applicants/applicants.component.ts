@@ -104,7 +104,7 @@ export class DataFromApiDatabase<Data extends ApplicantDto = ApplicantDto> {
   }
   
   get baseUrl() {
-    return `${environment.api_host}/user`
+    return `${environment.api_host}/verifier/list`
   }
 
   // data_response: GetDataListResponseFromApi<Data> | null = null;

@@ -18,7 +18,7 @@ export class FailedShareComponent implements OnInit {
     if (queryParams["close"]) {
       setTimeout(()=>{
         window.close()
-      }, 4000)
+      }, 10000)
     }
   }
 
