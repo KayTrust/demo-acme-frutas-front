@@ -1,12 +1,13 @@
 import { ChangeDetectionStrategy, Component, computed, ElementRef, inject, signal, ViewChild } from '@angular/core';
 import {MatIconModule} from '@angular/material/icon';
 import { LangCode, LanguageService } from '../../../common/language.service';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink } from '@angular/router';
+import { TitleHeaderStore } from '../../../common/title-header.store';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MatIconModule, RouterLink, RouterOutlet],
+  imports: [MatIconModule, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -18,7 +19,7 @@ export class HeaderComponent {
 
   langInfo = computed(()=>({...this.langService.langs[this.lang()], key: this.lang()}))
 
-  constructor() {
+  constructor(public titleStore: TitleHeaderStore) {
     this.langService.lang$.subscribe(lang=>{
       this.lang.set(lang);
     })

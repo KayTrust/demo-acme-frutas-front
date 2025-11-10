@@ -5,6 +5,7 @@ import { MelonUniversityComponent } from './pages/melon-university/melon-univers
 import { HomeComponent } from './pages/home/home.component';
 import { FailedShareComponent } from './pages/failed-share/failed-share.component';
 import { ApplicantsComponent } from './pages/applicants/applicants.component';
+import { mangoTitleResolver } from './common/mango-title.resolver';
 
 export const routes: Routes = [
   {
@@ -15,12 +16,18 @@ export const routes: Routes = [
   {
     path: 'corp',
     component: MangoCorpComponent,
-    title: "Mango Corp"
+    title: "Mango Corp",
+    resolve: {
+      customTitle: mangoTitleResolver
+    },
   },
   {
     path: 'mango',
     component: MangoCorpComponent,
-    title: "Mango Corp"
+    title: "Mango Corp",
+    resolve: {
+      customTitle: mangoTitleResolver
+    },
   },
   {
     path: 'university',
