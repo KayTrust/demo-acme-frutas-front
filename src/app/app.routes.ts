@@ -42,17 +42,26 @@ export const routes: Routes = [
   {
     path: 'congrats',
     component: GiveThanksComponent,
-    title: "Congratulations"
+    title: "Congratulations",
+    resolve: {
+      customTitle: mangoTitleResolver
+    },
   },
   {
     path: 'failed-share',
     component: FailedShareComponent,
-    title: "Failed sharing"
+    title: "Failed sharing",
+    resolve: {
+      customTitle: mangoTitleResolver
+    },
   },
   {
     path: 'applicants',
     component: ApplicantsComponent,
-    title: "Applicants"
+    title: "Applicants",
+    resolve: {
+      customTitle: mangoTitleResolver
+    },
   },
   {
     path: 'oauth2/cb/vpToken',
